@@ -1,0 +1,11 @@
+# Site settings
+title: James Nugent
+email: james@jen20.com
+description: "James is a software developer working in Bath, England, mostly working on Event Store. He is a connoiseur of cider and old guitars."
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://jen20.com" # the base hostname & protocol for your site
+twitter_username: jen20
+github_username:  jen20
+
+# Build settings
+markdown: redcarpet
