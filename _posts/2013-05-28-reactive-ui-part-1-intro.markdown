@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Reactive UI (Part 1) - Intro"
+permalink: "blog/2013/05/28/reactive-ui-part-1-intro/"
 ---
 
 Occasionally it becomes necessary for most developers to write something with a

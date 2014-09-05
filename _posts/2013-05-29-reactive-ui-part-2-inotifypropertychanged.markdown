@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Reactive UI (Part 2) - INotifyPropertyChanged"
+permalink: "blog/2013/05/29/reactive-ui-part-2-inotifypropertychanged/"
 ---
 
 One of the things that most MVVM frameworks provide is a class implementing

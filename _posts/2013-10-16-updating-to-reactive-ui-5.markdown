@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Updating to Reactive UI 5"
+permalink: "blog/2013/10/16/updating-to-reactive-ui-5/"
 ---
 
 Today I had to update a WPF application which is using Reactive UI. At the

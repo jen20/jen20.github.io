@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Reactive UI (Part 3) - Commands"
+permalink: "blog/2013/05/30/reactive-ui-part-3-commands/"
 ---
 
 ReactiveUI has a pretty neat implementation of `ICommand` named

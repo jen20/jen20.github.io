@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Catch-up subscriptions with the Event Store"
+permalink: "blog/2013/06/07/catch-up-subscriptions-with-the-event-store/"
 ---
 
 *This has been crossposted from the [Event Store Blog](http://geteventstore.com/blog).
