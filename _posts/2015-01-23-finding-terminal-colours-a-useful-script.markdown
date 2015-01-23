@@ -5,12 +5,12 @@ title: "Terminal Colours - A Useful Script"
 
 I've been spending a lot more time recently working "full time" in Vim while
 writing go and puppet, and so invested a bit of time getting tmux set up to my
-liking. As part of this I wanted fancy colours, but the names the terminal
-gives them ("colour1", "colour236" - hey, at least they included the "u") are
-not that useful.
+liking.
 
-This simple script however will print a line for each colour in the colour
-itself, making it easy to tell them apart!
+As part of this I wanted fancy colours in my tmux status line, but the names
+the terminal gives them ("colour1", "colour236" - hey, at least they included
+the "u") are not that useful. This script will print a line for each colour in
+the colour itself, making it easy to tell them apart!
 
 ```bash
 #!/usr/bin/env bash
