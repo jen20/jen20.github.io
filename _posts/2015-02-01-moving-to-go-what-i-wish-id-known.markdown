@@ -5,8 +5,9 @@ title: "Moving to Go - What I wish I'd known"
 
 Quite a few people I know are expressing interest in learning Go, so I decided
 to put down a couple of notes about my experience after having had the same
-conversation a few times over. Your mileage may vary on any of this stuff and
-it's in no particular order!
+conversation a few times over. None of the points are particularly original and
+are mostly here so I can point people at one place when they ask me about it!
+Your mileage may vary on any of this stuff and it's in no particular order!
 
 ### Go By Example
 
