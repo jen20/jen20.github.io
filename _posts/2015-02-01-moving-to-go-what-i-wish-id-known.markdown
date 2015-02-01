@@ -34,7 +34,7 @@ defined to make it easy to move around between different projects:
 
 ```bash
 cg() {
-cd $GOPATH/src/github.com/$1;
+    cd $GOPATH/src/github.com/$1;
 }
 ```
 
