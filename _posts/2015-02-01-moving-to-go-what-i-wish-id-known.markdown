@@ -16,6 +16,10 @@ fundamentals of the language. After that the posts on [Gopher
 Acadamy](http://blog.gopheracademy.com) are well worth reading. I'm not aware
 of any good print books right now, though I'm sure they exist.
 
+**Update (2-Feb-2015)**: Also on the reading list after Go By Example is
+[Effective Go](https://golang.org/doc/effective_go.html), which goes a long
+way towards documenting how to write idiomatic Go.
+
 ### Test scripts using Go Run
 
 `go run` is awesome - you could almost use it as a scripting language and
@@ -70,7 +74,7 @@ still a few niggles to fix with it (finding documentation is somewhat hit and
 miss from time to time). Turning on the type annotations for the identifier
 under the cursor is invaluable.
 
-The only three customizations I have for the vim-go plugin in my `vim.rc` are as
+The only customizations I have for the vim-go plugin in my `.vimrc` are as
 follows:
 
 ```vim
@@ -104,6 +108,11 @@ it's rarely necessary to go and read the documentation. With Go the docs are
 excellent, but are made even better with Dash. It's one of the best uses for
 £13 and works across all languages. You can install it via `brew cask` for
 added awesome.
+
+**Update (2-Feb-2015)**: People have pointed out [Zeal](http://zealdocs.org),
+which is similar to Dash for Linux and Windows, and also
+[devdocs.io](http://devdocs.io) which is a browser based version with an
+offline mode.
 
 ### Dependency Management
 
