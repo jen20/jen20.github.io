@@ -21,7 +21,10 @@ two parts. This part covers installing and configuring emacs and evil mode, and
 getting go-mode installed. The next part will cover the customizations
 necessary to get a sensible configuration for Go development.
 
-## Environment
+I'm publishing this as I'm doing it, so the chances of it all being good lisp
+are minimal. My config is up [on
+Github](https://github.com/jen20/emacs-dotfiles) so feel free to fork and/or
+pull request if you have improvements!  ## Environment
 
 I variously run both Mac OS X and Linux, and this post is focused at Mac OS X
 users, but most of the configuration should even be portable to Windows (though
