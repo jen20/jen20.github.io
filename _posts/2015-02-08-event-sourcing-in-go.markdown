@@ -270,3 +270,4 @@ If you have suggestions for how to improve this, please do check out the code on
 [typeswitch]: https://golang.org/doc/effective_go.html#type_switch
 [repo]: https://github.com/jen20/go-event-sourcing-sample
 [twitter]: https://twitter.com/jen20
+[cqrs]: http://codebetter.com/gregyoung/2010/02/16/cqrs-task-based-uis-event-sourcing-agh/
