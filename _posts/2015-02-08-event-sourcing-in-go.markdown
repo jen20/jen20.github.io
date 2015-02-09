@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Event Sourcing with Go"
+title: "Event Sourcing in Go"
 ---
 
 As one of the contributors to [Event Store][eventstore], it should probably not be surprising that sooner or later I'm going to get around to figuring out nice patterns for implementing Event Sourcing in whatever languages I'm working in!
