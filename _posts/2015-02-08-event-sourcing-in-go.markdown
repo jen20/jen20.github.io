@@ -257,7 +257,7 @@ FrequentFlierAccount: 1234567
 
 ## Summary
 
-There isn't a lot of code for implementing this, especially when compared to some implementations in C# which use dynamic calls to event handlers and such. The Go type switch makes it a reasonably concise implementation, even if it does lack the exhaustive pattern match check that a union type would provide in some functional langauges. Whilst immutability would be nice, it doesn't seem particularly idiomatic to Go, so I'm not too concerned about it's loss.
+There isn't a lot of code for implementing this, especially when compared to some implementations in C# which use dynamic calls to event handlers and such. The Go type switch makes it a reasonably concise implementation, even if it does lack the exhaustive pattern match check that a union type would provide in some functional languages. Whilst immutability would be nice, it doesn't seem particularly idiomatic to Go, so I'm not too concerned about it's loss.
 
 If you have suggestions for how to improve this, please do check out the code on [GitHub][repo] and either comment/open issues there, or get in touch [@jen20 on twitter][twitter]!
 
