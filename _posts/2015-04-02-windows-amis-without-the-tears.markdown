@@ -35,19 +35,19 @@ vitriol).
 
 So, what's the goal? Here's what I want:
 
-    - From my laptop, sat in Bwè Kafe or Macintyre Coffee (RIP) or anywhere
-      else for that matter, I want to be able to build a new AMI containing my
-      Windows customizations, without having infrastructure up front. That
-      means no jump boxes or VPNs should be necessary.
+- From my laptop, sat in Bwè Kafe or Macintyre Coffee (RIP) or anywhere
+  else for that matter, I want to be able to build a new AMI containing my
+  Windows customizations, without having infrastructure up front. That
+  means no jump boxes or VPNs should be necessary.
 
-    - I want the Packer workflow of defining a set of provisioners on top of a
-      series of builders, and allow similar images to be built locally for
-      VMWare as well as for AWS. To recap, Packer's templates are JSON files,
-      and it is run locally or as part of [Atlas](https://atlas.hashicorp.com)
-      or in Jenkins.
+- I want the Packer workflow of defining a set of provisioners on top of a
+  series of builders, and allow similar images to be built locally for
+  VMWare as well as for AWS. To recap, Packer's templates are JSON files,
+  and it is run locally or as part of [Atlas](https://atlas.hashicorp.com)
+  or in Jenkins.
 
-    - I don't want to resort to installing OpenSSH on Windows, or paying for
-      BitVise SSH Server (though these are paths of least resistance).
+- I don't want to resort to installing OpenSSH on Windows, or paying for
+  BitVise SSH Server (though these are paths of least resistance).
     
 Luckily (!?), to the last point, Windows for a while now has had an
 implementation of WS-Management named WinRM. I say luckily because this
