@@ -843,10 +843,10 @@ Format-XML $bundleConfig.InnerXml | Set-Content -Path $ec2BundleConfigFile
 
 ## Summary
 
-This should be easier - way easier. Building images should need a ton of extra
-software just to support Windows. But then again, doing a ton of extra stuff
-just to make Windows work is hardly a novelty to people who ever have to work
-with it.
+This should be easier - way easier. Building images should not need a ton of
+extra software just to support Windows. But then again, doing a ton of extra
+stuff just to make Windows work is hardly a novelty to people who ever have to
+work with it.
 
 The initial work done on this by Matt, Dylan and Masterzen (not sure on the
 real name there!) was outstanding, and I'm happy to have been able to
