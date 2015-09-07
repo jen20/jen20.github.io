@@ -6,14 +6,14 @@ title: "Using HCL - Part 1"
 Many of the [HashiCorp](https://hashicorp.com) projects use a rather nice
 configuration DSL, named "HCL" (an acronym for HashiCorp Configuration
 Language). The reasons it was originally created are [documented in the
-README][why] in the repository, but I see no reason not to adopt it when
+README][why] in the repository, and I see reason not to adopt it when
 building tools in Go (and indeed there may be a good argument for adopting it
 on other platforms too).
 
 HCL has seen use in [Terraform][tf], [Consul Template][tmpl], [envconsul][env]
 and probably other HashiCorp products so it's likely familiar to many people by
-now, but a representative sample of some configuration (for Terraform) using it
-looks like this:
+now, but a representative sample of some Terraform configuration using it looks
+like this:
 
 ```json
 provider "aws" {
@@ -33,10 +33,10 @@ resource "aws_vpc" "default" {
 
 This is fairly readable, and has json equivalent for if it needs to be machine
 generated. Unfortunately learning to use the library requires digging through
-the innards of Terraform (where the use is rather more advanced than most tools
+the innards of Terraform, where the use is rather more advanced than most tools
 need due to things like plugins which can specify their own configuration, and
-variable interpolation), or one of the simpler tools which does not demonstrate
-much of the functionality.
+variable interpolation. Alernatively one can look at one of the simpler tools
+such as Consul Template which does not demonstrate all of the functionality.
 
 So let's change that!
 
@@ -80,9 +80,11 @@ directory "data" {
 }
 ```
 
-The Go structure we want to parse this into looks like this:
+The Go structure we want to parse this into looks like this (in `config.go`):
 
 ```go
+package config
+
 type Config struct {
 	Region      string
 	AccessKey   string
@@ -157,17 +159,13 @@ func TestConfigParsing(t *testing.T) {
 const testConfig = `ommitted for brevity, see above for example`
 ```
 
-Now let'
-The first pass at this adds the following code to the
-`config.go` file which contains our structure definitions:
-
 ## Getting a parse tree 
 
-First thing we'll need to do in implementing our `ParseConfig` function is to
-parse the input text so we can work on it. The HCL library has a function named
-`Parse` for this, which takes a string and gives a parse tree or an error. We'll
-pass the error on if there is one, and dump the output to the log so we can see
-what we're working with.
+The first thing we'll need to do in implementing our `ParseConfig` function is
+to parse the input text so we can work on it. The HCL library has a function
+named `Parse` for this, which takes a string and gives a parse tree or an
+error. We'll pass the error on if there is one, and dump the output to the log
+so we can see what we're working with.
 
 ```go
 import (
@@ -332,8 +330,8 @@ Running the test will show the structure of the `hclParseTree` variable:
 
 ## Getting values out of the parse tree
 
-Looking at this we can clearly see the structure emerging. First let's look at
-matching the simple variables at the top of our config.
+Looking at this we can clearly see the structure of our configuration. First
+let's look at matching the simple string variables at the top of our config:
 
 ```go
 func ParseConfig(hclText string) (*Config, error) {
@@ -390,13 +388,14 @@ if rawRegion := hclParseTree.Get("region", false); rawRegion != nil {
 }
 ```
 
-That's rather a lot of code to deal with one configuration point. Fortunately
-for the most part it is unnecessary to write all this code. However, even with
-all this there are still issues. 
+That's rather a lot of code to deal with one configuration point.  However,
+even with all this there are still issues. 
 
 Imagine if we used this code in an application where the configuration file had
 many errors. We'd return from `ParseConfig` the first time any error was
-encountered - effectively forcing the user to play whack-a-mole with errors.
+encountered - effectively forcing the user to play whack-a-mole with errors as
+they fix each one.
+
 Instead what we want is a way of processing all of the configuration together
 and then returning all the errors in one hit. Luckily there is another
 HashiCorp library which will resolve this, named [go-multierror][me]. Let's
@@ -426,7 +425,7 @@ return result, errors.ErrorOrNil()
 
 We'll also add handling for the Access Key configuration point:
 
-```
+```go
 if rawAccessKey := hclParseTree.Get("access_key", false); rawAccessKey != nil {
     if rawAccessKey.Len() > 1 {
         errors = multierror.Append(errors, fmt.Errorf("Access Key was specified more than once in the configuration"))
