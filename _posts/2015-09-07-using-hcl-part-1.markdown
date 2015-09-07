@@ -10,6 +10,8 @@ README][why] in the repository, and I see reason not to adopt it when
 building tools in Go (and indeed there may be a good argument for adopting it
 on other platforms too).
 
+**tldr; the code is here: [github.com/jen20/hcl-sample][code].**
+
 HCL has seen use in [Terraform][tf], [Consul Template][tmpl], [envconsul][env]
 and probably other HashiCorp products so it's likely familiar to many people by
 now, but a representative sample of some Terraform configuration using it looks
@@ -456,6 +458,7 @@ In the next post I'll use [mapstructure][mapstructure] to reduce the amount of
 boilerplate code required, and show how to deal with the named configuration
 sections.
 
+[code]: https://github.com/jen20/hcl-sample "Code for this post"
 [tf]: http://terraform.io "Terraform"
 [tmpl]: https://github.com/hashicorp/consul-template "Consul Template"
 [env]: https://github.com/hashicorp/envconsul "envconsul"
