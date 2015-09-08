@@ -412,6 +412,29 @@ Output:
 mapstructureusage.Person{FirstName:"Frank", Surname:"Sinatra", City:"Hoboken", YearOfBirth:1915}
 ```
 
+## Weak Decoding
+
+*Note: This section was added after initial posting of this article based on
+[Mitchell's][mh] recommendation.*
+
+One of the other ways mapstructure can help reduce the amount of code required
+for mapping operations is by automatically making some type conversions. If the
+`WeaklyTypedInput` field on the decoder configuration is set to to `true` (or
+the `WeakDecode` package level function is used instead of `Decode`, the
+following type conversions will be made for you:
+
+- `bool` to `string` (`true` = "1", `false` = "0")
+- number to `string` (base 10)
+- `bool` to `int` or `uint` (`true` = 1, `false` = 0)
+- `string` to `int` or `uint` (base implied by prefix)
+- `int` to `bool` (true if value != 0)
+- `string` to `bool` (accepts: 1, t, T, TRUE, true, True, 0, f, F, FALSE,
+  false, False. Anything else is an error)
+- empty array = empty map and vice versa
+- negative numbers to overflowed uint values (base 10)
+
+These combine to make configuration files in particular a lot more human friendly.
+
 ## Summary
 
 This is a quick guide of using the mapstructure library for a rather contrived
@@ -421,6 +444,7 @@ also going to come back to it in the next part for finishing our configuration
 sample with HCL!
 
 [part1]: http://jen20.com/2015/09/07/using-hcl-part-1.html "Using HCL - Part 1"
+[mh]: https://twitter.com/mitchellh "Mitchell Hashimoto"
 [code]: https://github.com/jen20/hcl-sample "Code for this post"
 [tf]: http://terraform.io "Terraform"
 [tmpl]: https://github.com/hashicorp/consul-template "Consul Template"
