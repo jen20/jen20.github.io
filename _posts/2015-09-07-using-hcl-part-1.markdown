@@ -1,6 +1,6 @@
 --- 
 layout: post 
-title: "Using HCL - Part 1" 
+title: "Using HCL - Part 1 - Introduction" 
 ---
 
 Many of the [HashiCorp](https://hashicorp.com) projects use a rather nice
